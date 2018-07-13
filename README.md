@@ -14,4 +14,5 @@ Some features it includes are:
     * View the most popular posts
     * Search for keywords in posts
     * Browse the username database from the website
+    * Edit current subreddits and subjects
 
