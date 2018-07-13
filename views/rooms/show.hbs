@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <h1>{{room.topic}}</h1>
+  <a href="/rooms/{{room.id}}/edit">edit</a>
+</div>
+<div class="row justify-content-center">
+  <div class="col-8">
+    {{#each posts as |post|}}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-title text-center">{{post.subject}}</h3>
+          <p>{{post.body}}</p>
+        </div>
+
+        <div class="card-footer text-muted text-right">
+          <a align="left" href="/rooms/{{room.id}}/posts/edit/{{post.id}}">Edit</a>
+          <span class="points-span">{{post.points}} votes </span>
+
+          <div class="btn-group btn-group-sm">
+            <form action="/rooms/{{post.room}}/posts/{{post.id}}" method="post" class="inline-form">
+              <input type="hidden" name="points" id="post-points" value="-1">
+              <button type="submit" class="downvote-button btn btn-danger">-</button>
+            </form>
+
+            <form action="/rooms/{{post.room}}/posts/{{post.id}}" method="post" class="inline-form">
+              <input type="hidden" name="points" id="post-points" value="1">
+              <button type="submit" class="upvote-button btn btn-success">+</button>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h6>Comments</h3>
+          </div>
+          <div class="card-body">
+            <ul>
+              {{#each post.comments as |comment|}}
+                <li>{{comment.body}}</li>
+                <div class="card">
+                  <div class="card-header">
+                    <h6>Comments of Comments</h3>
+                  </div>
+                  <div class="card-body">
+                    <ul>
+                      {{#each post.comments.commentscomments as |commentcomment|}}
+                        <li>{{commentcomment.body}}</li>
+                      {{/each}}
+                      <li><a href="/rooms/{{../room.id}}/posts/{{post.id}}/comments/{{comment.id}}/commentscomments/new">New comment of a comment</a></li>
+                    </ul>
+                  </div>
+              </div>
+              {{/each}}
+              <li><a href="/rooms/{{../room.id}}/posts/{{post.id}}/comments/new">New comment</a></li>
+            </ul>
+          </div>
+      </div>
+
+    </div>
+
+    {{/each}}
+    <div class="row nP justify-content-center">
+      <a href="/rooms/{{room.id}}/posts/new">New Post</a>
+    </div>
+
+</div>

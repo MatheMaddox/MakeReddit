@@ -1,0 +1,36 @@
+<div class="container">
+  <div align="center">
+    <h2>Subreddits</h2>
+  </div>
+
+<input type="text" id="keyWords" onkeyup="searchBar()" placeholder="Search for rooms..." title="Type in the name of a discussion or group">
+
+<ul id="list">
+  <li>
+    <a class="btn btn-primary" href="/rooms/new">+</a>
+  </li>
+  {{#each rooms as |room|}}
+    <li>
+      <a href="/rooms/{{room.id}}">{{room.topic}}</a>
+    </li>
+  {{/each}}
+</ul>
+</div>
+
+<script>
+function searchBar() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("keyWords");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("list");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>

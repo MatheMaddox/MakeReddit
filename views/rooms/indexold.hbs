@@ -1,0 +1,19 @@
+<div class="container text-center justify-content-center">
+  <h4>Rooms Index</h4>
+</div>
+
+<div class="roomList container" align="center">
+  {{#each rooms as |room|}}
+      <div class="addSpace card">
+        <div class="card-header text-center">
+          <a href="/rooms/{{room.id}}">{{room.topic}}</a>
+        </div>
+        <div class="card-body text-right">
+          <a href="/rooms/{{room.id}}/edit">edit</a>
+        </div>
+      </div>
+  {{/each}}
+  <div align="center">
+    <a class="btn btn-primary" href="/rooms/new">New Discussion</a>
+  </div>
+</div>

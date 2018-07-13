@@ -1,0 +1,137 @@
+.gridContent {
+  height: 100px;
+}
+#create {
+  color: #c9cacc;
+  grid-area: c;
+}
+#upvote {
+  color: #c9cacc;
+  grid-area: u;
+}
+#button {
+  grid-area: b;
+}
+#register {
+  grid-area: r;
+}
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "c b u"
+                       ". r .";
+  }
+}
+
+
+
+.main {
+  padding: 1em 2em;
+}
+
+form {
+  max-width: 20em;
+}
+.roomList {
+  width: 200px;
+  margin: 10px;
+}
+.addSpace {
+  margin: 10px;
+}
+.comments {
+  margin: 10px;
+}
+.nv, .rowed {
+  display: flex;
+}
+.card {
+  margin: 10px;
+}
+.nP {
+  font-size: 30px;
+}
+#logo {
+  width: 50px;
+  height: 50px;
+  border-width: 5px;
+}
+.navbar-brand {
+  font-size: 36px;
+  align: center;
+}
+.navbar {
+  display: flex;
+}
+.rowed {
+  display: flex;
+  align: center;
+  justify-content: flex-end;
+  flex-direction: row;
+
+}
+.nav-item {
+  margin: 10px;
+  font-color: white;
+}
+.nav-link {
+  color: white !important;
+}
+#logout,
+#logout:active,
+#logout:visited,
+#logout:focus {
+  border-color: red;
+  color: red;
+}
+#logout:hover {
+  color: white;
+  background-color: red;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+}
+#LoginFail {
+  background-color: #ffb7b9;
+  font-color: darkred;
+  border-color: darkred;
+  border-radius: 8px;
+  width: 320px;
+  margin: 10px;
+}
+.navbody {
+  display: flex;
+  width: 600px !important;
+  justify-content: flex-end;
+}
+nav .btn {
+  margin-right: 20px;
+}
+#keyWords {
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid grey;
+  margin-bottom: 15px;
+}
+
+#list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#list a {
+  border: 1px solid #ddd;
+  background-color: lightgrey;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+#postLink {
+  font-size: 36px;
+}

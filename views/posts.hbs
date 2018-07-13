@@ -1,0 +1,59 @@
+<div class="container">
+  <div align="center">
+    <h2>Posts</h2>
+  </div>
+
+
+<ul id="list">
+  <li>
+    <a class="btn btn-primary" href="/rooms/">+</a>
+  </li>
+  {{#each posts as |post|}}
+    <div class="card mb-3">
+      <div class="card-body">
+        <form action="/rooms/{{post.room}}/posts/{{post.id}}" method="post" class="inline-form">
+          <input type="hidden" name="points" id="post-points" value="0">
+          <button type="submit" id="postLink" class="btn">{{post.subject}}</button>
+        </form>
+        <p>{{post.body}}</p>
+      </div>
+
+      <div class="card-footer text-muted text-right">
+        <span class="points-span">{{post.points}} votes </span>
+
+        <div class="btn-group btn-group-sm">
+          <form action="/rooms/{{post.room}}/posts/{{post.id}}" method="post" class="inline-form">
+            <input type="hidden" name="points" id="post-points" value="-1">
+            <button type="submit" class="downvote-button btn btn-danger">-</button>
+          </form>
+
+          <form action="/rooms/{{post.room}}/posts/{{post.id}}" method="post" class="inline-form">
+            <input type="hidden" name="points" id="post-points" value="1">
+            <button type="submit" class="upvote-button btn btn-success">+</button>
+          </form>
+        </div>
+      </div>
+
+  </div>
+
+  {{/each}}
+</ul>
+</div>
+
+<script>
+function searchBar() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("keyWords");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("list");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>

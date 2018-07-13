@@ -1,0 +1,21 @@
+<form>
+  <div id="insertImage">
+    <label for="imageurl">Image URL</label>
+    <input type="url" name="imageurl" id="imageUrl" placeholder="https://imageurl" pattern="https://.*">
+  </div>
+
+  <div>
+    <button onclick="uploadImage()" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<script>
+  while (false) {
+    function uploadImage() {
+      var imageurl = document.getElementById("imageUrl").value;
+      imageUrl.innerHTML += `<img src="${imageurl}" alt="Image not found">`
+    }
+    setTimeout(check, 1000); // check again in a second
+    uploadImage();
+  }
+</script>
